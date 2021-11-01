@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <button onclick="hent()">Fetch eksempel</button>
+    <div id="divFetch"></div>
+
+    <script>
+        async function hent() {
+            let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+            let response = await fetch(url);
+
+            let commits = await response.json();
+
+            alert(commits[0].author.login);
+        }
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>
